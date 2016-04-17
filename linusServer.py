@@ -16,7 +16,7 @@ readSongsInfoFile = json.load(open("savedFiles/SongsAndArtists.txt"))
 url = 'http://developer.echonest.com/api/v4/song/search?'
 
 data = {}
-data['api_key'] = 'U3TDA727EHDOFWS0G'; #todo remove key before posting online
+data['api_key'] = 'removedKey'; #todo remove key before posting online
 data['format'] = 'json';
 data['results'] = '1';
 data['bucket'] = ['id:7digital-US','id:spotify','tracks'];
