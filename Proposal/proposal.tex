@@ -1,0 +1,265 @@
+% -----------------------------------------------
+% Template for ISMIR Papers
+% 2015 version, based on previous ISMIR templates
+% -----------------------------------------------
+
+\documentclass{article}
+\usepackage{ismir,amsmath,cite}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{url}
+
+% Title.
+% ------
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+\title{Linus - Music Recommendation System 2016}
+=======
+\title{ Linus - Music Recommendation System 2016}
+>>>>>>> parent of a19cf68... update
+=======
+\title{ Linus - Music Recommendation System 2016}
+>>>>>>> parent of a19cf68... update
+=======
+\title{ Linus - Music Recommendation System 2016}
+>>>>>>> parent of a19cf68... update
+=======
+\title{ Linus - Music Recommendation System 2016}
+>>>>>>> parent of a19cf68... update
+=======
+\title{ Linus - Music Recommendation System 2016}
+>>>>>>> parent of a19cf68... update
+
+% Three addresses
+% --------------
+\threeauthors
+  {Harpreet Singh} {University of Victoria\\\tt hsingh91@uvic.ca}
+  {Ishmeet Singh Kohli} {University of Victoria \\ {\tt ishmeet@uvic.ca}}
+  {Harmeet Singh Saimbhi} {University of Victoria \\ {\tt hsaimbhi@uvic.ca}}
+
+\begin{document}
+%
+\maketitle
+%
+\begin{abstract}
+There are a lot of activities in which the user wants instant music but doesn't want to spend time sitting and creating playlists. The goal of this project is to create a playlist generator that takes as seed either a short recording of audio or asks the user to define a preset (for eg. an activity like running, studying, programming, etc.) and then listen to a few songs. The user provides feedback to these songs which the system uses to create a custom playlist on spotify. While the playlist is running, the user can provide feedback by liking, disliking or skipping songs which will cause the playlist to be updated. To improve recommendations, in addition to using audio features we will also take into account social tags.\cite{Turnbull08fiveapproaches}
+\end{abstract}
+%
+\section{Introduction}
+
+Due to the internet, we now have millions and millions of songs available to us at a click of a button, but ironically this has made it even harder to choose music to listen to. A number of companies have come up to solve this problem but with different approaches. For eg: Pandora tries to solve it by employing actual people who sit all day and classify songs, but it is a model that is not scalable. Last.fm uses colloborative filtering and although there are services which offer recommendations based just on audio features, they often miss the human touch. Our project aim is to build a system that combines both social and waveform aspect of music and build a recommendation system that creates a playlist based on the likes and dislikes of the user. The core aspect of our system are the features of audio signals which we will further polish by using tags from last.fm dataset. For creating recommendations, we will use the work described here.\cite{Tim05dynamicplaylist}
+
+The basic idea is to use simple techniques and constantly consider feedback to keep the process going in the right direction. User can keep liking or disliking songs even after the initial setup process.  Key aspect is that the initial setup time should be as little as possible.  An important thing to consider would be variance, since too little variance would cause boredom and too much variance might not be well suited to the taste of the listener.
+
+
+\section{Method}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+The basis of our approach would be waveform similarity between songs. These songs would be assigned tags according to the spectral similarities and patterns which would be calculated based on the information extracted from the million song dataset. To overcome the mechanized barrier and to introduce a flavour of cultural and human touch we will also annotate these songs from the tags extracted from the last fm web api.
+=======
+The basis of our approach would be waveform similarity beween audio songs. These songs would be assigned tags as per the spectral similarities and patterns which would be calculated as per the information extracted from the million song dataset. To overcome the mechanical barrier and to introduce a flavour of cultural and human touch we will also annotate these songs from the tags extracted from the last fm web api.
+>>>>>>> parent of a19cf68... update
+=======
+The basis of our approach would be waveform similarity beween audio songs. These songs would be assigned tags as per the spectral similarities and patterns which would be calculated as per the information extracted from the million song dataset. To overcome the mechanical barrier and to introduce a flavour of cultural and human touch we will also annotate these songs from the tags extracted from the last fm web api.
+>>>>>>> parent of a19cf68... update
+=======
+The basis of our approach would be waveform similarity beween audio songs. These songs would be assigned tags as per the spectral similarities and patterns which would be calculated as per the information extracted from the million song dataset. To overcome the mechanical barrier and to introduce a flavour of cultural and human touch we will also annotate these songs from the tags extracted from the last fm web api.
+>>>>>>> parent of a19cf68... update
+=======
+The basis of our approach would be waveform similarity beween audio songs. These songs would be assigned tags as per the spectral similarities and patterns which would be calculated as per the information extracted from the million song dataset. To overcome the mechanical barrier and to introduce a flavour of cultural and human touch we will also annotate these songs from the tags extracted from the last fm web api.
+>>>>>>> parent of a19cf68... update
+=======
+The basis of our approach would be waveform similarity beween audio songs. These songs would be assigned tags as per the spectral similarities and patterns which would be calculated as per the information extracted from the million song dataset. To overcome the mechanical barrier and to introduce a flavour of cultural and human touch we will also annotate these songs from the tags extracted from the last fm web api.
+>>>>>>> parent of a19cf68... update
+
+Once the songs are annotated, the role of the user and the recommender comes into play. The recommendation cycle follows the following work flow :-
+
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+1) The user is presented with various moods/activities(For eg:- Working-Out/Studying/Partying) from which he can choose the option most suitable for him. Alternatively if the user cannot find any option defining his current requirement, he would have an option to input a seed song by recording a short clip of a song.
+
+2) If the user chooses a preset option he would have to listen to at least 3 songs and based on the response(like/dislike) given to these songs, our system will create a static playlist containing 10 songs based on the option chosen and the response given to the songs played. If a seed is uploaded, then based on the spectral similarities with the seed song, a candidate song closest to the seed song will be played.
+
+3) The next song played is the candidate song closest to any of the accepted songs. Using the minimum distance for recommendations from song sets that is proposed in \cite{Logan04musicrecommendation}.
+
+4) For each candidate song, let da be the distance to the nearest accepted, and let ds be the distance to the nearest skipped. If da < ds, then add the candidate to the set S. From S play the song with smallest da. If S is empty, then play the candidate song which has the best (i.e. the lowest) da/ds ratio.\cite{Tim05dynamicplaylist}
+=======
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+1) The user is presented with various moods/activities(For eg:- Working-Out/Studying/Partying) from which he can choose the option most suitable for him. Alternatively if the user cannot find any option defining his current requirement, he would also be having an option to input a seed song by recording a song that suits his mood.
+
+2) Once an option is selected/or seed is uploaded, our system will create a static playlist containing 5 songs based on the option choosen or based on the spectral similarities with the seed song and a candidate song closest to the seed song is played.
+
+3) The next song played is the candidate song closest to any of the accepted songs. Using the minimum distance for recommendations from song sets that is proposed in \cite{Logan04musicrecommendation}.
+
+4) For each candidate song, let da be the distance to the nearest accepted, and let ds be the distance to the nearest skipped. If da \textless ds, then add the candidate to the set S. From S play the song with smallest da. If S is empty, then play the candidate song which has the best (i.e. the lowest) da/ds ratio.\cite{Tim05dynamicplaylist}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+
+%
+\section{Datasets and tools to be used}
+
+We will use a subset of the million song dataset \cite{msd}, and its associated apis to gather useful information about the songs for the purpose of algorithmic classification of the songs.
+
+We will use the last.fm api \cite{lastfm} and its associated million song dataset \cite{lastFmDataset} for the million songs dataset to gather social tag info.
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+We'll use the spotify application \cite{spotify} to play songs and the spotify api to create and modify playlists \cite{spotifyApi}.
+
+We will use Ionic framework to build the web based application and its mobile counterparts.
+
+We will use Weka/Apache Spark for machine learning aspect of the project. If parallelism and speed becomes critical, we might go ahead with Apache Spark due it's huge speed advantage.
+=======
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+We’ll use the spotify application \cite{spotify} to play songs and the spotify api to create and modify playlists \cite{spotifyApi}.
+
+We will use Ionic framework to build the web based application and its mobile counterparts.
+
+We will use Weka for machine learning aspect of the project and Apache Spark for data parallelism to achieve higher levels of efficiency in our algorithm.
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+=======
+>>>>>>> parent of a19cf68... update
+
+
+\section{Phases}
+
+\subsection{Phase 1 - Finalizing the approach, getting the dataset ready for use, Classification/tagging of songs.}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+The goal of this phase is to finalize the core algorithm to be used, validate that the tools decided are optimum for our use against the various other tools available. Selecting, preparing and pruning the dataset to be used and making it available on the server to be used for the project and classifying the dataset as per our need. Since we will be using a subset of the million song dataset, we might not get all the features we would ideally want to extract from a piece of music. We have to identify the constraints and define how to overcome them.
+=======
+The goal of this phase is to finalize the core algorithm to be used, validate that the tools decided are optimum for our use against the various other tools available, selecting, preparing and pruning the dataset to be used and getting it available on the server to be used for the project and classifying the dataset as per our need. Since we will be using a subset of the million song dataset, we might not get all the features we would ideally want to extract from a piece of music. We have to identify the constraints and define how to overcome them.
+>>>>>>> parent of a19cf68... update
+=======
+The goal of this phase is to finalize the core algorithm to be used, validate that the tools decided are optimum for our use against the various other tools available, selecting, preparing and pruning the dataset to be used and getting it available on the server to be used for the project and classifying the dataset as per our need. Since we will be using a subset of the million song dataset, we might not get all the features we would ideally want to extract from a piece of music. We have to identify the constraints and define how to overcome them.
+>>>>>>> parent of a19cf68... update
+=======
+The goal of this phase is to finalize the core algorithm to be used, validate that the tools decided are optimum for our use against the various other tools available, selecting, preparing and pruning the dataset to be used and getting it available on the server to be used for the project and classifying the dataset as per our need. Since we will be using a subset of the million song dataset, we might not get all the features we would ideally want to extract from a piece of music. We have to identify the constraints and define how to overcome them.
+>>>>>>> parent of a19cf68... update
+=======
+The goal of this phase is to finalize the core algorithm to be used, validate that the tools decided are optimum for our use against the various other tools available, selecting, preparing and pruning the dataset to be used and getting it available on the server to be used for the project and classifying the dataset as per our need. Since we will be using a subset of the million song dataset, we might not get all the features we would ideally want to extract from a piece of music. We have to identify the constraints and define how to overcome them.
+>>>>>>> parent of a19cf68... update
+=======
+The goal of this phase is to finalize the core algorithm to be used, validate that the tools decided are optimum for our use against the various other tools available, selecting, preparing and pruning the dataset to be used and getting it available on the server to be used for the project and classifying the dataset as per our need. Since we will be using a subset of the million song dataset, we might not get all the features we would ideally want to extract from a piece of music. We have to identify the constraints and define how to overcome them.
+>>>>>>> parent of a19cf68... update
+
+\subsection{Phase 2 - Building the recommender, training and testing the classifiers}
+This is the core part of the project as we will be defining and preparing the models for our recommendation. we will be building the models on a crude level in this phase which would be optimized and polished in the later phases. The core approach remains audio-features based music similarity but we have to refine it further by including artist, genre and other tags. We will have a basic working model of the application by the end of this phase.
+
+\subsection{Phase 3 - Building the web application along with its mobile and wearable counterparts, integration of the interface and the recommender and deployment}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+Goal of this phase is to create a polished final product that works on both mobile and desktop platforms. Recommendation engine will run on a server and applications on all platforms will consume the web services deployed on the server to interact with the core recommender. Integration of the server part with the client part will also be done in this phase which will include deployment of the web-services on a suitable server and setting up  data parallelism to improve performance and turn around time. We will be using ionic framework to build the application and that way we can build applications for the web, iPhone and Android simultaneously. 
+=======
+Goal of this phase is to create a polished final product that works on both mobile and desktop platforms. Recommendation engine will run on a server and applications on all platforms will consume the web services deployed on the server to interact with the core recommender. Integration of the server part with the client part will also be done in this phase which will include deployment of the webservices on a suitable server and setting up the data parallelism to improve performance and turn around time. We will be using ionic framework to build the application and that way we can build applications for the web, iphone and android simultaneously. 
+>>>>>>> parent of a19cf68... update
+=======
+Goal of this phase is to create a polished final product that works on both mobile and desktop platforms. Recommendation engine will run on a server and applications on all platforms will consume the web services deployed on the server to interact with the core recommender. Integration of the server part with the client part will also be done in this phase which will include deployment of the webservices on a suitable server and setting up the data parallelism to improve performance and turn around time. We will be using ionic framework to build the application and that way we can build applications for the web, iphone and android simultaneously. 
+>>>>>>> parent of a19cf68... update
+=======
+Goal of this phase is to create a polished final product that works on both mobile and desktop platforms. Recommendation engine will run on a server and applications on all platforms will consume the web services deployed on the server to interact with the core recommender. Integration of the server part with the client part will also be done in this phase which will include deployment of the webservices on a suitable server and setting up the data parallelism to improve performance and turn around time. We will be using ionic framework to build the application and that way we can build applications for the web, iphone and android simultaneously. 
+>>>>>>> parent of a19cf68... update
+=======
+Goal of this phase is to create a polished final product that works on both mobile and desktop platforms. Recommendation engine will run on a server and applications on all platforms will consume the web services deployed on the server to interact with the core recommender. Integration of the server part with the client part will also be done in this phase which will include deployment of the webservices on a suitable server and setting up the data parallelism to improve performance and turn around time. We will be using ionic framework to build the application and that way we can build applications for the web, iphone and android simultaneously. 
+>>>>>>> parent of a19cf68... update
+=======
+Goal of this phase is to create a polished final product that works on both mobile and desktop platforms. Recommendation engine will run on a server and applications on all platforms will consume the web services deployed on the server to interact with the core recommender. Integration of the server part with the client part will also be done in this phase which will include deployment of the webservices on a suitable server and setting up the data parallelism to improve performance and turn around time. We will be using ionic framework to build the application and that way we can build applications for the web, iphone and android simultaneously. 
+>>>>>>> parent of a19cf68... update
+
+\subsection{Phase 4 - Testing, feedback and further improvements}
+In this phase we will test the application ourselves first and then put it to real world test by asking users to listen to recommendations generated by the system. Consider the reviews and if possible apply those changes to improve the application. We will work on various fine tunings in this phase in which might result in better and improved results in an efficient manner.
+
+\section{Roles}
+
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Member} & \textbf{Role} \\
+  \hline
+  Harpreet &1) Estimating Ground Truth (Social Tagging)\\
+  &2) Building the core recommender\\
+  &3) Product management\\
+
+  Ishmeet &1) Estimating Ground Truth (Feature Tagging)\\
+  &2) Handling machine learning aspects\\
+  &3) Enabling Data Parallelism\\
+  
+  Harmeet &1) Handling Deployment on server\\
+  &2) Developing mobile, wearable \& web apps\\
+  &3) Testing\\
+  \hline
+\end{tabular}
+
+
+\section{Timeline}
+
+
+\begin{tabular}{|p{2cm}|p{6cm}|}
+  \hline
+  \textbf{Phase} & \textbf{Deadline} \\
+  \hline
+  Phase 1  & March 8, 2016 \\
+  Phase 2  & March 25, 2016 \\
+  Phase 3  & April 4, 2016 \\
+  Phase 4  & April 10, 2016 \\
+  \hline
+\end{tabular}
+
+% For bibtex users:
+\bibliography{proposal}
+
+\end{document}

@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.example.harmeet.linus"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file("myreleasekey.keystore")
+            storePassword "password"
+            keyAlias "MyReleaseKey"
+            keyPassword "password"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    wearApp project(':wear')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+//    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:design:23.2.1'
+//    compile 'com.github.kikoso:SwipeableCards:1.1-RELEASE@aar'
+    compile 'com.google.code.gson:gson:2.6.2'
+    // This library handles authentication and authorization
+    compile 'com.spotify.sdk:spotify-auth:1.0.0-beta12@aar'
+    // This library handles music playback
+    compile 'com.spotify.sdk:spotify-player:1.0.0-beta12@aar'
+}
