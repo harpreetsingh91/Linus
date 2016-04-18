@@ -42,3 +42,5 @@ Most of the other .py files are run once to get features/info from songs databas
 2. Better way to represent song vectors. Instead of just binary vectors, use a range of values.
 
 3. Introduce Genre feature and a test a better algorithm to calculate distances.
+
+4. Provide a more detailed documentation.
