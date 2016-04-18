@@ -9,6 +9,8 @@
 
 * utilities.py contains functions that will be used often
 
+* Android app folder contains the mobile app for this application. Credits to IshmeetKohli and HarmeetSaimbhi for contributing to the app.
+
 Most of the other .py files are run once to get features/info from songs database. This data is stored in files and is read from there.
 
 **TODO:**
