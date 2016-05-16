@@ -45,7 +45,7 @@ In short, app calls "first" function when it is run for the first time. For ever
 #### Future scope:
 
 1. Since this is a basic working prototype, the foremost thing to do is provide performance improvements so that
-   the application can be scaled.
+   the application can be scaled. Also change structure to something that is closer to MVC pattern.
 
 2. Better way to represent song vectors. Instead of just binary vectors, use a range of values.
 
