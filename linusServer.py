@@ -16,7 +16,7 @@ readSongsInfoFile = json.load(open("savedFiles/SongsAndArtists.txt"))
 url = 'http://developer.echonest.com/api/v4/song/search?'
 
 data = {}
-data['api_key'] = 'removedKey'; #todo remove key before posting online
+data['api_key'] = 'U3TDA727EHDOFWS0G'; #todo remove key before posting online
 data['format'] = 'json';
 data['results'] = '1';
 data['bucket'] = ['id:7digital-US','id:spotify','tracks'];
@@ -85,14 +85,16 @@ def first():
     a = request.args.get('songId','')
     testMasala[str(remark)] = [str(songId)]
     linusAlgoObject.setSeedSong(str(songId))
+
     print "This is songId"+songId
     print linusAlgoObject.closest[:10]
+
     print "nava maal"
     print linusAlgoObject.seedSong0
-    #print str(readSongsInfoFile[linusAlgoObject.seedSong0][0])
-    #print str(readSongsInfoFile[linusAlgoObject.seedSong0][1])
+
     firstSongs = [getSongMap(str(readSongsInfoFile[linusAlgoObject.seedSong0][0]),str(readSongsInfoFile[linusAlgoObject.seedSong0][1]),linusAlgoObject.seedSong0)]
     print testMasala
+
     count = 0
     for i in linusAlgoObject.closest[:10]:
         count+=1

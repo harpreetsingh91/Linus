@@ -4,7 +4,7 @@ import json
 import pickle
 
 
-readVectorFile = json.load(open("songVectorsFileJSONwithTimbres.txt"))
+readVectorFile = json.load(open("savedFiles/songVectorsFileJSONwithTimbres.txt"))
 
 def euclDist(a):
     dis = 0
@@ -36,7 +36,7 @@ npAdjacenyMatrix = np.array(adjacencyMatrix)
 
 
 
-amHDF = openFile('adjacencyMatrixWithTimbres.hdf', 'w')
+amHDF = openFile('savedFiles/adjacencyMatrixWithTimbres.hdf', 'w')
 atom = Atom.from_dtype(npAdjacenyMatrix.dtype)
 filters = Filters(complib='blosc', complevel=2)
 ds = amHDF.createCArray(amHDF.root, 'adjacencyMatrix', atom, npAdjacenyMatrix.shape, filters=filters)

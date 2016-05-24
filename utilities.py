@@ -16,7 +16,7 @@ class linusUtilities(object):
     assert os.path.isdir(msd_subset_path),'wrong path' # sanity check
     # path to the Million Song Dataset code
     # CHANGE IT TO YOUR LOCAL CONFIGURATION
-    msd_code_path='/Users/harpreetsingh/Google Drive/Uvic Assignments and work/MIR/project/Linus/Code/imports/MSongsDB'
+    msd_code_path='/Users/harpreetsingh/Google Drive/Uvic Assignments and work/MIR/project/Linus/imports/MSongsDB'
     assert os.path.isdir(msd_code_path),'wrong path' # sanity check
     # we add some paths to python so we can import MSD code
     # Ubuntu: you can change the environment variable PYTHONPATH

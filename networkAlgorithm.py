@@ -43,9 +43,7 @@ class linusAlgorithm(object):
 
 
         print songNumber
-        # songNumber +1 is song number in our vector dictionary.
-        # songNumber is subtracted by one above since adjacencymatrix starts at 0
-
+        
         counter = 0
         for i in self.abc[songNumber]:
             if i==0 and counter!= songNumber: #this avoids adding the seed to the playlist
