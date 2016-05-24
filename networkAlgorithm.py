@@ -23,6 +23,8 @@ class linusAlgorithm(object):
 
     abc = h5File.root.adjacencyMatrix
 
+    #abc is just the node that contains a song data. Don't worry too much about hdf structure.
+
     #seedSong0 = "SOBLGCN12AB0183212" # just for testing. seedSong is actually assigned from mobile app
 
     #readVectorFile contains a dictionary with key as number of song
@@ -43,7 +45,7 @@ class linusAlgorithm(object):
 
 
         print songNumber
-        
+
         counter = 0
         for i in self.abc[songNumber]:
             if i==0 and counter!= songNumber: #this avoids adding the seed to the playlist
@@ -114,7 +116,11 @@ class linusAlgorithm(object):
             distances[i] = tuple((likedSongsDistances[0],dislikedSongsDistances[0]))
         return distances
 
-
+    '''
+    this function calls calculateDistance function on candidate songs from liked and disliked songs and returns songs
+    that suit our criteria. inputx variable is for testing and allows to limit the number of songs in the candidate dataset.
+    '''
+    
     def linusCurryMaker(self, inputx, linusMasala):
         #for each candidate song i.e unplayed song calculate distance from liked and disliked
         #choose song that has smallest Da and has Da>Ds
