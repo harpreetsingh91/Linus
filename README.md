@@ -11,7 +11,7 @@
 
 * Android app <a href ="https://github.com/ishmeetkohli/linus">here</a>. Credits to IshmeetKohli and HarmeetSaimbhi for contributing to the app.
 
-Other .py files (createAdjacencyMatrix.py and saveMedians.py) run once to get features/info from songs database. This data is stored in files and is read from there.
+Other .py files (createAdjacencyMatrix.py and saveMedians.py) run once to get features/info from songs database. This data is stored in files and is read from there. calculateVectors.py file is used to create song vectors.
 
 **TODO:**
 
