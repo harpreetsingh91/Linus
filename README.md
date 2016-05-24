@@ -9,7 +9,7 @@
 
 * utilities.py contains functions that will be used often
 
-* Android app folder contains the mobile app for this application. Credits to IshmeetKohli and HarmeetSaimbhi for contributing to the app.
+* Android app <a href ="https://github.com/ishmeetkohli/linus">here</a>. Credits to IshmeetKohli and HarmeetSaimbhi for contributing to the app.
 
 Most of the other .py files are run once to get features/info from songs database. This data is stored in files and is read from there.
 
@@ -45,7 +45,7 @@ In short, app calls "first" function when it is run for the first time. For ever
 #### Future scope:
 
 1. Since this is a basic working prototype, the foremost thing to do is provide performance improvements so that
-   the application can be scaled.
+   the application can be scaled. Also change structure to something that is closer to MVC pattern.
 
 2. Better way to represent song vectors. Instead of just binary vectors, use a range of values.
 
